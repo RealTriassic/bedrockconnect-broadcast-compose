@@ -1,0 +1,22 @@
+services:
+  bedrockconnect:
+    image: strausmann/minecraft-bedrock-connect:latest
+    restart: always
+    ports:
+      - 38264:19132/udp
+    volumes:
+      - ./lang.json:/lang.json:ro
+      - ./servers.json:/servers.json:ro
+    depends_on:
+      mariadb:
+        condition: service_healthy
+    environment:
+      DB_TYPE: mariadb
+      DB_HOST: mariadb
+      DB_DB: bedrockconnect
+      DB_USER: bedrockconnect
+      DB_PASS: ${MYSQL_PASSWORD}
+      AUTO_RECONNECT: true
+      LANGUAGE: /lang.json
+      CUSTOM_SERVERS: /servers.json
+      FEATURED_SERVERS: false

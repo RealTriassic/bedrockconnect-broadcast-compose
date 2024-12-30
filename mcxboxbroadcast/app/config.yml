@@ -1,0 +1,22 @@
+session:
+  update-interval: 30
+  query-server: false
+  web-query-fallback: false
+  session-info:
+    host-name: " §gCustom servers§7, for §e§leveryone§r§7.§r"
+    world-name: "§7Join to open §fserver list§r"
+    version: 1.21.30
+    protocol: 729
+    players: 0
+    max-players: 100
+    ip: 198.251.83.205
+    port: 38264
+
+friend-sync:
+  update-interval: 20
+  auto-follow: true
+  auto-unfollow: true
+
+debug-log: false
+
+suppress-session-update-info: true

@@ -1,0 +1,11 @@
+services:
+  mcxboxbroadcast:
+    image: ghcr.io/mcxboxbroadcast/standalone:latest
+    restart: always
+    tty: true
+    stdin_open: true
+    volumes:
+      - ./app/:/opt/app/config/
+    depends_on:
+      bedrockconnect:
+        condition: service_healthy
