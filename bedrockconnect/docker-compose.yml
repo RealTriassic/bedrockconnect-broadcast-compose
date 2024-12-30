@@ -3,7 +3,7 @@ services:
     image: strausmann/minecraft-bedrock-connect:latest
     restart: always
     ports:
-      - 38264:19132/udp
+      - 19132/udp
     volumes:
       - ./lang.json:/lang.json:ro
       - ./servers.json:/servers.json:ro
